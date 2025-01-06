@@ -6,8 +6,9 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.6;
   background-color: #f5f5f5;
 }
@@ -18,24 +19,20 @@ body {
   padding: 1rem 2rem;
   color: white;
   display: flex;
-  justify-content: flex-start; /* Логотип и текст идут слева */
-  align-items: center; /* Выравнивание элементов по центру по вертикали */
+  align-items: center;
   position: relative;
   z-index: 1000;
   height: 100px;
 }
 
-
 .header-brand {
   display: flex;
-  flex-direction: column; /* Текст (название и подзаголовок) располагается по вертикали */
-  margin-left: 0.7rem; /* Отступ между логотипом и текстом */
+  flex-direction: column;
+  margin-left: 0.7rem;
 }
 
 .logo {
-  max-width: 50px; /* Максимальная ширина логотипа */
-  max-height: 50px; /* Максимальная высота логотипа */
-  width: auto;
+  max-width: 50px;
   height: auto;
 }
 
@@ -49,13 +46,12 @@ body {
   opacity: 0.8;
 }
 
-/* Navigation styles */
 .nav-list {
   display: flex;
   list-style: none;
   gap: 2rem;
   align-items: center;
-  margin-left: 35vw;
+  margin-left: auto;
 }
 
 .nav-link {
@@ -74,7 +70,6 @@ body {
   background-color: #0ea5e9;
 }
 
-/* Mobile menu button */
 .mobile-menu-btn {
   display: none;
   background: none;
@@ -92,130 +87,26 @@ body {
   transition: 0.3s;
 }
 
-/* Main content styles */
-.main-content {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.weather-section {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Стили слайдбара */
+/* Sidebar styles */
 .sidebar {
   position: fixed;
-  top: 100px; 
+  top: 100px;
   right: 0;
   width: 500px;
   height: calc(100% - 100px);
-  background: linear-gradient(145deg, #1a1d24, #00b4d8);  
+  background: linear-gradient(145deg, #1a1d24, #00b4d8);
   border-left: 1px solid #ccc;
-  box-shadow: -2px 0 15px rgba(0, 0, 0, 0.2); 
+  box-shadow: -2px 0 15px rgba(0, 0, 0, 0.2);
   padding: 20px;
   overflow-y: auto;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   z-index: 500;
-  border-radius: 12px 0 0 12px; 
+  border-radius: 12px 0 0 12px;
 }
 
 .sidebar.open {
   transform: translateX(0);
-}
-
-#city-name {
-  font-size: 1.5rem;
-  color: #ffffff;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-/* Информация о городе */
-#city-info {
-  font-size: 1.1rem;
-  color: #ffffff;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.inline-icon {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 5px; 
-  width: 25px; 
-  height: 25px;
-}
-
-.weather-icon {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px; 
-  width: 150px; 
-  height: 150px; 
-}
-
-.weather-details {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.forecast-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.forecast-entry {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-  border: 2px solid #0077b6;
-}
-
-.forecast-entry:hover {
-  transform: scale(1.03);
-}
-
-.forecast-timestamp {
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: #555;
-  width: 15%;
-}
-
-.forecast-data {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  width: 15%;
-}
-
-.weather-icon-forecast {
-  width: 40px;
-  height: 40px;
-}
-
-.forecast-details {
-  font-size: 0.8rem;
-  color: #333;
-}
-
-.forecast-details strong {
-  color: #0077b6;
 }
 
 #close-sidebar {
@@ -229,64 +120,11 @@ body {
 }
 
 #close-sidebar:hover {
-  color: #ff3860; 
-  transform: scale(1.1); 
+  color: #ff3860;
+  transform: scale(1.1);
 }
 
-#close-sidebar:active {
-  transform: scale(1); 
-}
-
-.sidebar.open {
-  transform: translateX(0);
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .mobile-menu-btn {
-    display: block;
-    margin-left: 30vw;
-  }
-
-  .logo {
-    max-width: 40px; /* Уменьшаем размер логотипа на мобильных устройствах */
-    max-height: 40px;
-  }
-
-  .nav-list {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #1a1d24;
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
-    z-index: 10;
-  }
-
-  .nav-list.active {
-    display: flex;
-  }
-
-  .nav-link {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-   .sidebar {
-    width: 100%;
-    height: calc(100% - 100px);  
-    top: 100px; 
-    right: 0;
-    border-radius: 0;
-  }
-  
-  #close-sidebar {
-    font-size: 1.5rem;
-  }
-  /* Стили для футера */
+/* Стили для футера */
 .footer {
   background: #000;
   color: gray;
@@ -401,6 +239,4 @@ body {
     color: #333; /* Цвет при наведении */
   }
   
-}
-
 }
