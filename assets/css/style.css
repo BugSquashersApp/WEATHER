@@ -46,6 +46,7 @@ body {
   opacity: 0.8;
 }
 
+/* Navigation styles */
 .nav-list {
   display: flex;
   list-style: none;
@@ -57,34 +58,61 @@ body {
 .nav-link {
   color: white;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  padding: 0.8rem 1.4rem;
+  border-radius: 30px;
+  background-color: transparent;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: inline-block;
 }
 
 .nav-link:hover {
-  background-color: rgba(17, 159, 230, 0.486);
+  background-color: rgba(17, 159, 230, 0.7);
+  transform: scale(1.2); /* Лупа при наведении */
 }
 
 .nav-link.active {
   background-color: #0ea5e9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.1); /* Активная ссылка увеличивается */
 }
 
+/* Mobile menu button */
 .mobile-menu-btn {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 1rem;
+  position: relative;
+  z-index: 10;
 }
 
 .mobile-menu-btn span {
   display: block;
   width: 25px;
-  height: 2px;
+  height: 3px;
   background-color: white;
   margin: 5px 0;
-  transition: 0.3s;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Effect when opening mobile menu */
+.mobile-menu-btn.open span:nth-child(1) {
+  transform: rotate(45deg);
+  position: absolute;
+  top: 0;
+}
+
+.mobile-menu-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  position: absolute;
+  bottom: 0;
 }
 
 /* Sidebar styles */
@@ -124,7 +152,7 @@ body {
   transform: scale(1.1);
 }
 
-/* Стили для футера */
+/* Footer styles */
 .footer {
   background: #000;
   color: gray;
@@ -164,7 +192,7 @@ body {
   margin: 0 1%;
 }
 
-/* Стили для блока с фразами */
+/* Quote block styles */
 #random-phrase {
   font-size: 1.2rem;
   font-style: italic;
@@ -194,7 +222,7 @@ body {
   background-color: #008a9d;
 }
 
-/* Стили для ссылки GitHub */
+/* GitHub link styles */
 .github-link {
   display: inline-flex;
   align-items: center;
@@ -238,5 +266,4 @@ body {
   .github-link:hover {
     color: #333; /* Цвет при наведении */
   }
-  
 }
